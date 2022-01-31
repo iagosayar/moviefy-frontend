@@ -1,0 +1,7 @@
+.actor-card {
+    font-size: 0.8em;
+}
+
+.actor-card img {
+    cursor: pointer;
+}

@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <h3>Actores</h3>
+    <div class="row overflow-auto flex-row flex-nowrap pb-4">
+        <div class="col-2 d-flex align-items-stretch" *ngFor="let actor of actorsMovie">
+
+            <div class="card actor-card">
+                <span (click)="viewActor(actor.id)">
+                    <img src="https://image.tmdb.org/t/p/w500/{{actor.profile_path}}" class="card-img-top">
+                </span>
+                <div class="card-body">
+                    <h5 class="card-title">{{ actor.name }}</h5>
+                    <p class="card-text">{{actor.character}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
