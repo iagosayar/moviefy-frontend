@@ -39,6 +39,5 @@ testem.log
 Thumbs.db
 
 # Client
-src/environments/environment.ts
 node_modules
 .angular/cache
