@@ -26,11 +26,11 @@ export class MoviesService {
 
   getSimilarMovies(movie_id) : any{
     let address = this.getAddress("/movie/" + movie_id + "/similar");
-    console.log(address);
     return this.http.get(address);
   }
   getActorsMovie(movie_id) : any{
     let address= this.getAddress("/movie/"+ movie_id+ "/credits");
+  console.log(address);
     return this.http.get(address);
   }
 

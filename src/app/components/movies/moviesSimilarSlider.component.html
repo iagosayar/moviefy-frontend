@@ -1,0 +1,17 @@
+<div class="container mt-4">
+    <h3>Similares</h3>
+
+    <div class="col-12">
+        <div class="row overflow-auto flex-row flex-nowrap pb-4">
+            <div class="col-2 " *ngFor="let movie of similarMovies">
+                <div class="card text-center">
+                    <span class="mx-auto rounded" (click)="viewMovie(movie.id) ">
+                        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" class="card-img-top">
+                    </span>
+                    <p class="card-text fw-bold w-50 mx-auto">{{movie.title}}</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

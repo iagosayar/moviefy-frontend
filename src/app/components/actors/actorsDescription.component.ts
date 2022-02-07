@@ -5,11 +5,11 @@ import { ActorsService } from "src/app/services/actors.service";
 
 @Component({
 selector :'app-actorViews',
-templateUrl: './actorView.component.html',
-styleUrls:['actorView.component.css']
+templateUrl: 'actorsDescription.component.html',
+styleUrls:['actorsDescription.component.css']
 })
 
-export class actorViewComponent implements OnInit{
+export class ActorDescriptionComponent implements OnInit{
 actor: any = {};
 id!:number;
 

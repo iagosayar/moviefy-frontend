@@ -1,0 +1,23 @@
+<div class="container mt-4">
+    <div class="col-12">
+        <h3>Reparto</h3>
+        <div class="row overflow-auto flex-row flex-nowrap pb-4">
+            <div class="col-auto " *ngFor="let worker of workersMovie">
+                <div class="card text-center">
+                    <span class="mx-auto rounded" (click)="viewActor(worker.id) " *ngIf="worker.known_for_department=='Acting' ">
+                        <img *ngIf="worker.profile_path==null " src="../../../assets/profile_path.svg "  class="card-img-top ">
+                        <img *ngIf="worker.profile_path!=null " src="https://image.tmdb.org/t/p/w500/{{worker.profile_path}} "  class="card-img-top ">
+                    </span>
+                    <div class="mx-auto rounded" *ngIf="worker.known_for_department!='Acting'">
+                        <img *ngIf="worker.profile_path==null" src="../../../assets/profile_path.svg" class="card-img-top rounde">
+                        <img *ngIf="worker.profile_path!=null" src="https://image.tmdb.org/t/p/w500/{{worker.profile_path}}" class="card-img-top">
+                    </div>
+
+                    <h5 class="card-title">{{ worker.name }}</h5>
+                    <p class="card-text  ">{{worker.known_for_department}}</p>
+                    <p class="card-text  ">{{worker.character}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

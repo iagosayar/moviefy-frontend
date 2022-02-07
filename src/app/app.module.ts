@@ -6,15 +6,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //Template Imports
 import { HeaderComponent } from './templates/header/header.component';
 import { FooterComponent } from './templates/footer/footer.component';
+//Home Imports
+import { HomeComponent } from './components/home/home.component';
+import { HomeWrapperComponent } from './components/home/homeWrapper.component';
+
+
 //Movies Imports
-import { PopularMovieComponent } from './components/movies/popular.component';
-import { ViewMovieComponent } from './components/movies/view.component';
-import { ActorsComponent } from './components/movies/actors.component';
-import { SimilarMoviesComponent } from './components/movies/similar.component';
+import { MoviesPopularComponent } from './components/movies/moviesPopular.component';
+import { MovieDescriptionComponent } from './components/movies/movieDescription.component';
+import { CastSliderComponent } from './components/movies/castSlider.component';
+import { MoviesSimilarSliderComponent } from './components/movies/moviesSimilarSlider.component';
 //ActorImports
-import { PopularActorsComponent } from './components/actors/popularActors.component';
-import { actorViewComponent } from './components/actors/actorView.component';
-import { MoviesMakedComponent } from './components/actors/moviesMaked.component';
+import { ActorsPopularComponent } from './components/actors/actorsPopular.component';
+import { ActorDescriptionComponent } from './components/actors/actorsDescription.component';
+import { ActorsSliderMoviesMakedComponent } from './components/actors/actorsSliderMoviesMaked.component';
 //Post Modules
 import { IndexPostComponent } from './components/posts/index-post.component';
 import { EditPostComponent } from './components/posts/edit-post.component';
@@ -26,13 +31,15 @@ import { NewPostComponent } from './components/posts/new-post.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    PopularMovieComponent,
-    ViewMovieComponent,
-    ActorsComponent,
-    SimilarMoviesComponent,
-    PopularActorsComponent,
-    actorViewComponent,
-    MoviesMakedComponent,
+    HomeComponent,
+    HomeWrapperComponent,
+    MoviesPopularComponent,
+    MovieDescriptionComponent,
+    CastSliderComponent,
+    MoviesSimilarSliderComponent,
+    ActorsPopularComponent,
+    ActorDescriptionComponent,
+    ActorsSliderMoviesMakedComponent,
     IndexPostComponent, 
     EditPostComponent, 
     NewPostComponent   
@@ -43,7 +50,7 @@ import { NewPostComponent } from './components/posts/new-post.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

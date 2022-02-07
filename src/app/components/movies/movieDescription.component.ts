@@ -4,10 +4,10 @@ import {MoviesService} from '../../services/movies.service';
 
 @Component({
   selector: 'app-details',
-  templateUrl: './view.component.html',
-  styleUrls: ['./view.component.css']
+  templateUrl: 'movieDescription.component.html',
+  styleUrls: ['movieDescription.component.css']
 })
-export class ViewMovieComponent implements OnInit {
+export class MovieDescriptionComponent implements OnInit {
 
   movie:any = {};
   id!: number;

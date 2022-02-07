@@ -1,0 +1,20 @@
+.card img {
+    cursor: pointer;
+    box-shadow: 0 0 19px #ddd;
+}
+
+.card {
+    background-color: transparent;
+    border: 0px;
+    margin-right: 20px;
+}
+
+.card img {
+    width: 150px !important;
+    height: 225px;
+    margin: 0px !important;
+}
+
+.card p {
+    font-size: small;
+}

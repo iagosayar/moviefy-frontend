@@ -1,0 +1,9 @@
+.actor-summary h6 {
+    font-size: 0.7em;
+}
+
+.InfoActor {
+    background-color: var(--mainColor);
+    border-radius: 28px;
+    box-shadow: 0 0 19px #ddd;
+}

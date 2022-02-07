@@ -5,11 +5,11 @@ import { MovieI } from '../../models/movie.interface';
 
 @Component({
   selector: 'app-popular',
-  templateUrl: './popular.component.html',
-  styleUrls: ['./popular.component.css']
+  templateUrl: 'moviesPopular.component.html',
+  styleUrls: ['moviesPopular.component.css']
 })
-export class PopularMovieComponent implements OnInit {
-
+export class MoviesPopularComponent implements OnInit {
+  public page !: number;
   movies:any = []
   
   constructor(private movieService: MoviesService, private router: Router) { }

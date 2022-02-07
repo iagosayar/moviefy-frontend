@@ -1,0 +1,22 @@
+.actor-card {
+    font-size: 0.8em;
+}
+
+.actor-card span {
+    cursor: pointer;
+}
+
+.card {
+    background-color: transparent;
+    border: 0px;
+}
+
+.card img {
+    width: 150px !important;
+    height: 225px;
+    box-shadow: 0 0 19px #ddd;
+}
+
+.card p {
+    font-size: small;
+}

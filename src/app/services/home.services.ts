@@ -7,7 +7,7 @@ import { environment } from "src/environments/environment";
     providedIn:'root'
 })
 
-export class ActorsService{
+export class HomeService{
 
 apiURL:string = environment.movieApiUrl;
 apiKey:string= environment.movieApiKey;
@@ -16,24 +16,30 @@ constructor(private http:HttpClient){}
 
 getAddress(path):string{
     return this.apiURL + path + "?api_key=" + this.apiKey + "&language=es";
-  }
-getAddressPag(path, page):string{
-    return this.apiURL + path + "?api_key=" + this.apiKey + "&language=es"+"-MX&page="+page;
 }
 
-//With Pagination
-getPopularActors(page) : any{
-  let address = this.getAddressPag('/person/popular',page);
-  return this.http.get(address);
-}
 //Without Pagination
-getActorsDetails(actor_id) : any{
-  let address= this.getAddress('/person/' + actor_id);
+getTvPopular() : any{
+  let address= this.getAddress('/tv/popular/');
   return this.http.get(address);
 }
-getMovieMaked(person_id) : any{
-  let address= this.getAddress("/person/"+ person_id+ "/movie_credits");
+getStreamingTv() : any{
+    let address= this.getAddress('/tv/airing_today');
+    return this.http.get(address);
+  }
+getCinemaMovies() : any{
+  let address= this.getAddress("/movie/now_playing");
+  console.log( address);
+
   return this.http.get(address);
 }
+getTopRatedMovies(){
+
+  let address= this.getAddress("/movie/top_rated");
+  return this.http.get(address);
+  
+}
+
+
 
 }
