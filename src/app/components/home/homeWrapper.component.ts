@@ -40,12 +40,7 @@ import { ActorsService } from 'src/app/services/actors.service';
         this.arrayOf = data["results"];
       })
     }
-    
-     
 
-    
-
-    showStreamMovies
     viewMovie(id){
       this.router.navigate(['/movie', id ]);
     }

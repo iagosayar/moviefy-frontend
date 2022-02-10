@@ -10,28 +10,19 @@ import { HomeService } from 'src/app/services/home.services';
   export class HomeComponent implements OnInit {
   
     @Input() movieId!: number; 
-    topMovies:any = [];
-    carrusellMovies=[];
-    first : boolean = false;
+    images:any = [];
     
-    constructor(private movieService: HomeService,private router:Router) { }
+    constructor(private homeService: HomeService,private router:Router) { }
   
 
     ngOnInit(): void {
-        this.TopRatedMoviesCarrousel();
+         this.GetPhotos();
     }
-
-    TopRatedMoviesCarrousel(): any {
-        this.movieService.getTopRatedMovies().subscribe(data => {
-            this.topMovies = data['results'];
-        })
+    GetPhotos() : any{
+         this.homeService.getRandomPhotos(3).subscribe(data=>{
+           data.forEach(peli => {
+             this.images.push(peli['urls']['regular']);
+         });
+         })
     }
-
-      PrimerItem(item){
-        if(item.id==this.topMovies[0].id){
-            return true;
-        }else{
-            return false;
-        }
-      }
   }
