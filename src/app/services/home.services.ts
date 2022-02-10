@@ -48,8 +48,6 @@ getTopRatedMovies() : any{
 }
 getRandomPhotos(number) : any{
 let address= this.getPhotoAddress("/photos/random?orientation=landscape&query=Cinema,Movies,Films&count="+number);
-console.log(address);
-
 return this.http.get(address);
 }
 
