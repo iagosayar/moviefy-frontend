@@ -1,18 +1,72 @@
-<div class="container mt-5">
+<div class="container mt-3">
+    <h3 class="fw-bold">Peliculas Populares</h3>
+
     <div class="row">
-        <div class="col-lg-3 mb-3 d-flex align-items-stretch" *ngFor="let movie of movies">
-            <div class="card card-movie">
-                <span (click)="viewMovie(movie.id)">
-            <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" class="card-img-top">
-          </span>
-                <div class="card-body ">
-                    <p class="card-text">{{ movie.title }}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted">{{ movie.release_date }}</small>
-                    </div>
+        <div class="col-4">
+            <div class="container ">
+                <div class="filtros">
+                    <ul>
+                        <!--cada elemento de la lsita sera un filtro en especifico-->
+                        <li>
+                            <ul class="list-group-item ">
+                                <form>
+                                    <div class="form-group">
+                                        <h6 class="text-muted">Enseñame</h6>
+                                        <ul>
+                                            <li><input type="radio" name="filter" [(ngModel)]="filter" value="0">Todo</li>
+                                            <li><input type="radio" name="filter" [(ngModel)]="filter" value="1">Peliculas</li>
+                                            <li><input type="radio" name="filter" [(ngModel)]="filter" value="2">Series</li>
+                                        </ul>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group">
+                                        <input type=”text” class="w-100 form-control" placeHolder="Titulo" [(ngModel)]="title" maxlength=”6” name="title">
+                                    </div>
+                                </form>
+                            </ul>
+                        </li>
+                        <input type="button" class="miboton btn btn-dark fw-bold w-100 ml-4 mt-4" value="Buscar" (click)="filterApply()">
+                    </ul>
                 </div>
             </div>
         </div>
 
+
+        <div class="col-8 ">
+            <div class="row ">
+                <div class="col-lg-3 mb-3 d-flex align-items-stretch " *ngFor="let movie of movies ">
+                    <div class="card card-movie ">
+                        <span (click)="viewMovie(movie.id) ">
+                          <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }} " class="card-img-top ">
+                        </span>
+                        <div class="card-body ">
+                            <span *ngIf="movie.title==null">
+                                <p  class="card-text ">{{ movie.name }}</p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <small class="text-muted ">{{ movie.first_air_date }}</small>
+                                </div>
+                            </span>
+                            <span *ngIf="movie.title!=null">
+                                <p  class="card-text ">{{ movie.title }}</p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <small class="text-muted ">{{ movie.release_date }}</small>
+                                </div>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
+
 </div>
+
+
+<!-- <div class="filter-panel">
+    <div class="name">Ordenar</div>
+    <div class="orden">Ordenar</div>
+
+</div> -->

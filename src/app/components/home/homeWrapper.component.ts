@@ -15,7 +15,6 @@ import { ActorsService } from 'src/app/services/actors.service';
     @Input() movieId!: number; 
     arrayOf:any = []
     
-    
     constructor(private movieService: HomeService,private prueba: ActorsService,private router:Router) { }
   
     // Se ejecuta cuanto se crea el compoment

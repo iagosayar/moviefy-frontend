@@ -1,3 +1,21 @@
-.card-movie img {
+.card-movie img,
+.filter-panel {
     cursor: pointer;
+}
+
+.miboton {
+    height: 50px;
+    border-radius: 28px;
+}
+
+ul {
+    padding-left: 5px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.list-group-item {
+    border-radius: top 28px;
 }
