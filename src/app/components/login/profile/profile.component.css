@@ -1,0 +1,14 @@
+* {
+    color: white;
+}
+
+.profileimage {
+    border: 2px solid;
+    background-color: white;
+    width: 55px;
+    height: 55px;
+}
+
+p {
+    margin-left: 4px;
+}

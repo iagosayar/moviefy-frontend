@@ -22,6 +22,7 @@ import { ActorsSliderMoviesMakedComponent } from './components/actors/actorsSlid
 import { LoginButtonComponent } from './components/login/login-button/login-button.component';
 import { LogoutButtonComponent } from './components/login/logout-button/logout-button.component';
 import { AuthButtonComponent } from './components/login/authentication-button/authentication-button.component';
+import { ProfileComponent } from './components/login/profile/profile.component';
 //---imports
 import { AuthModule } from '@auth0/auth0-angular';
 //Post Modules
@@ -48,6 +49,7 @@ import { NewPostComponent } from './components/posts/new-post.component';
     LoginButtonComponent,
     LogoutButtonComponent,
     AuthButtonComponent,
+    ProfileComponent,
     IndexPostComponent, 
     EditPostComponent, 
     NewPostComponent,   
@@ -61,6 +63,7 @@ import { NewPostComponent } from './components/posts/new-post.component';
     AuthModule.forRoot({
       domain: 'iagosayar.us.auth0.com',
       clientId: 'wccot3UbTulFbuQ81qytXaG91SYmhlNE',
+      cacheLocation:'localstorage'
     }),
     ],
   providers: [],
