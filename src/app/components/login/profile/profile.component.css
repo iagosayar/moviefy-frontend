@@ -5,8 +5,12 @@
 .profileimage {
     border: 2px solid;
     background-color: white;
+}
+
+img {
     width: 55px;
     height: 55px;
+    border-radius: 28px;
 }
 
 p {
