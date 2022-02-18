@@ -16,13 +16,7 @@ import { HomeService } from 'src/app/services/home.services';
   
 
     ngOnInit(): void {
-         this.GetPhotos();
+        
     }
-    GetPhotos() : any{
-         this.homeService.getRandomPhotos(3).subscribe(data=>{
-           data.forEach(peli => {
-             this.images.push(peli['urls']['regular']);
-         });
-         })
-    }
+  
   }

@@ -6,32 +6,58 @@
             <div class="container ">
                 <div class="filtros">
                     <ul>
-                        <!--cada elemento de la lsita sera un filtro en especifico-->
+                        <!--cada elemento de la lista sera un filtro en especifico-->
                         <li>
                             <ul class="list-group-item ">
+
                                 <form>
-                                    <div class="form-group">
-                                        <h6 class="text-muted">Enseñame</h6>
-                                        <ul>
-                                            <li><input type="radio" name="filter" [(ngModel)]="filter" value="0">Todo</li>
-                                            <li><input type="radio" name="filter" [(ngModel)]="filter" value="1">Peliculas</li>
-                                            <li><input type="radio" name="filter" [(ngModel)]="filter" value="2">Series</li>
-                                        </ul>
-                                    </div>
-                                    <hr>
                                     <div class="form-group">
                                         <input type=”text” class="w-100 form-control" placeHolder="Titulo" [(ngModel)]="title" maxlength=”6” name="title">
                                     </div>
+                                    <hr>
+                                    <div class="form-group">
+                                        <ul>
+                                            <li><input type="radio" class="form-check-input mx-1" name="filter" [(ngModel)]="filterTypeTitle" value="0">Todo</li>
+                                            <li><input type="radio" class="form-check-input mx-1" name="filter" [(ngModel)]="filterTypeTitle" value="1">Peliculas</li>
+                                            <li><input type="radio" class="form-check-input mx-1" name="filter" [(ngModel)]="filterTypeTitle" value="2">Series</li>
+                                        </ul>
+                                    </div>
+
                                 </form>
+                                <input type="button" class="miboton btn btn-dark fw-bold w-100 ml-4 mt-4" value="Buscar" (click)="filterApply()">
+
                             </ul>
+
                         </li>
-                        <input type="button" class="miboton btn btn-dark fw-bold w-100 ml-4 mt-4" value="Buscar" (click)="filterApply()">
+                        <!--cada elemento de la lista sera un filtro en especifico-->
+                        <li>
+                            <ul class="list-group-item mt-4">
+                                <form>
+                                    <div class="form-group">
+                                        <label>Idioma:</label> <select class="form-select w-50">
+                                            <option  value="es">Español</option>
+                                            <option  value="en">Ingles</option>
+                                            <option  value="fr">Frances</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group date mt-4">
+                                        Fecha: <input type="text" class="form-control" value="12-02-2012">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <input type="button" class="miboton btn btn-dark fw-bold w-100 ml-4 mt-4" value="Buscar" (click)="discoverMovies()">
+                                
+                            </ul>
+
+                        </li>
+                        <!--cada elemento de la lsita sera un filtro en especifico-->
                     </ul>
                 </div>
             </div>
         </div>
-
-
         <div class="col-8 ">
             <div class="row ">
                 <div class="col-lg-3 mb-3 d-flex align-items-stretch " *ngFor="let movie of movies ">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef,ViewChild } from '@angular/core';
 import {MoviesService} from '../../services/movies.service';
 import { Router } from '@angular/router';
 import { MovieI } from '../../models/movie.interface';
@@ -12,9 +12,8 @@ import { SearchService } from 'src/app/services/search.service';
 export class MoviesPopularComponent implements OnInit {
   public page !: number;
   movies:any = []
-  filter!:number;
+  filterTypeTitle!:number;
   title!:String ;
-  language!:String;
   adult!:boolean;
   region!:string
 
@@ -29,14 +28,18 @@ export class MoviesPopularComponent implements OnInit {
       this.movies = data["results"];
     })
   }
+
 filterApply(){
-  if(this.filter==0){
-    this.searchAll(this.title);
-  }else if (this.filter==1){
-    this.searchMovie(this.title);
-  }else{
-    this.searchTvMovie(this.title);
-  }
+
+    if(this.filterTypeTitle==0){
+      this.searchAll(this.title);
+    }else if (this.filterTypeTitle==1){
+      this.searchMovie(this.title);
+    }else{
+      this.searchTvMovie(this.title);
+    }
+  
+
 }
 //SERVICES
 searchAll(title){
@@ -51,6 +54,12 @@ searchMovie(title){
 }
 searchTvMovie(title){
   this.searchService.searchTvMovie(title).subscribe(data => {
+    this.movies = data["results"];
+  })
+}
+discoverMovies(){
+console.log(this.region);
+  this.searchService.searchdiscoverMovies(this.region).subscribe(data => {
     this.movies = data["results"];
   })
 }

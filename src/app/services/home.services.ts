@@ -11,18 +11,12 @@ export class HomeService{
 
 apiMovieURL:string = environment.movieApiUrl;
 apiMovieKey:string= environment.movieApiKey;
-apiPhotoUrl:string =environment.unsplashUrl;
-apiPhotoKey:string=environment.unsplashApiKey;
 
 
 constructor(private http:HttpClient){}
 
 getMovieAddress(path):string{
     return this.apiMovieURL + path + "?api_key=" + this.apiMovieKey + "&language=es-ES";
-}
-
-getPhotoAddress(path):string{
-  return this.apiPhotoUrl+path+"&client_id="+this.apiPhotoKey;
 }
 
 //Without Pagination
@@ -46,10 +40,7 @@ getTopRatedMovies() : any{
   let address= this.getMovieAddress("/movie/top_rated");
   return this.http.get(address);
 }
-getRandomPhotos(number) : any{
-let address= this.getPhotoAddress("/photos/random?orientation=landscape&query=Cinema,Movies,Films&count="+number);
-return this.http.get(address);
-}
+
 
 
 
